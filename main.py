@@ -18,8 +18,11 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-    if message.content == "hello":
-        await message.channel.send("Im geeked")
+    # if message.content == "hello":
+    #     await message.channel.send("Im geeked")
+    if message.author.bot:
+        return
+    await message.channel.send("Im geeked")
 
 
 bot.run(DISCORD_TOKEN)
